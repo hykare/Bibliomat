@@ -4,4 +4,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "test1#index"
+
+  get '/tavern', to: 'tavern#index'
+
 end
