@@ -2,14 +2,12 @@ class CharactersController < ApplicationController
     def show 
 
         if params[:id].nil?
-            @id = current_user.id
+            @character = current_user.characters.first! 
         else
-            @id = params[:id]
+            @character = Character.find params[:id]
         end
-        # @id = params[:id].nil? ? current_user.id : params[:id]
-    end
 
-    def show_character_by_id
+        @statistic = @character.statistic
 
     end
 
