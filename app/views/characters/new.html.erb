@@ -1,14 +1,11 @@
 
 <%= form_with model: @character do |form| %>
+  Nazwij swoją postać:
   <div>
-    <%= form.label :name %><br>
     <%= form.text_field :name %>
   </div>
 
-  <div>
-    <%= form.label :exp %><br>
-    <%= form.text_field :exp %>
-  </div>
+
 
   <div>
     <%= form.submit %>

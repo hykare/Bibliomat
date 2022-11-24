@@ -1,12 +1,12 @@
 class CreateCharacters < ActiveRecord::Migration[7.0]
   def change
     create_table :characters do |t|
-      t.string :name
-
-      t.integer :exp
+      t.belongs_to :user
       
-      t.integer :strength
-      t.integer :dexterity
+      t.string :name
+      
+      t.integer :health
+      t.integer :exp
 
       t.timestamps
     end

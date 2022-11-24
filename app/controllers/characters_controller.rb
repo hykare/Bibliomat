@@ -14,17 +14,21 @@ class CharactersController < ApplicationController
     end
 
     def create
-        @character = Character.new 
+        
+        @character = Character.new
+        @character.user = current_user
+        @character.health = 100
+        @character.exp = 0
+        
         @character.name = params[:character][:name]
-        @character.exp = params[:character][:exp]
-        @character.strength = 1 
-        @character.dexterity = 1
-
+        stat = Statistic.new strength: 1, dexterity: 1, stamina: 1, initiative: 1
+        
+        @character.statistic = stat
         if @character.save
             redirect_to character_path
           else
             render :new, status: :unprocessable_entity
-          end
+        end
 
     end
 
