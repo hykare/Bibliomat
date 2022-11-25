@@ -7,22 +7,28 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "main_layout_grid", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   
   <body>
-    <h1>~WENSZOWA DOLINA~</h1>
 
-    <% if user_signed_in? %>
-      <p>Logged in as <%= current_user.email %></p>
-      <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
-    <% else %>
-      <%= link_to 'sign in', new_user_session_path %> <br>
-      <%= link_to 'sign up', new_user_registration_path %>
-    <% end %>
-    <hr>
-    <%= yield %>
-    <hr>
-    layout/application/post
+  <div id="main-layout-grid">
+    <div id="top-bar">
+      <h1>~WENSZOWA DOLINA~</h1>
+
+      <% if user_signed_in? %>
+        <p>Logged in as <%= current_user.email %></p>
+        <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+      <% else %>
+        <%= link_to 'sign in', new_user_session_path %> <br>
+        <%= link_to 'sign up', new_user_registration_path %>
+      <% end %>
+    </div>
+
+    <div id="yielded">
+      <%= yield %>
+    </div>
+  </div>
   </body>
 </html>

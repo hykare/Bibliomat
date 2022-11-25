@@ -1,0 +1,15 @@
+body, html {
+  margin: 0;
+  padding: 0;
+ }
+ 
+#main-layout-grid {
+  display: grid;
+  grid-template-rows: 5em 1fr;
+  height: 100%;
+}
+
+#top-bar {
+  display: flex;
+  background-color: rgb(80, 71, 56);
+}
