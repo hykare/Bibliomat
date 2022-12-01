@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Test1</title>
+    <title>Wenszowa Dolina</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,7 +11,18 @@
   </head>
   
   <body>
-    dupa
+    <h1>~WENSZOWA DOLINA~</h1>
+
+    <% if user_signed_in? %>
+      <p>Logged in as <%= current_user.email %></p>
+      <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+    <% else %>
+      <%= link_to 'sign in', new_user_session_path %> <br>
+      <%= link_to 'sign up', new_user_registration_path %>
+    <% end %>
+    <hr>
     <%= yield %>
+    <hr>
+    layout/application/post
   </body>
 </html>

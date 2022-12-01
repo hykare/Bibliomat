@@ -1,6 +1,13 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  devise_for :users
 
   # Defines the root path route ("/")
   root "test1#index"
+  get '/tavern', to: 'tavern#index'
+  get '/character', to: 'characters#show'
+  get '/character/:id', to: 'characters#show'
+  get '/characters', to: 'characters#show'
+  resources :characters, only: [:show, :new, :create]
+  
+  resources :users, only: [:index, :show]
 end
