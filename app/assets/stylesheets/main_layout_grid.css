@@ -1,15 +1,24 @@
-body, html {
-  margin: 0;
-  padding: 0;
- }
- 
-#main-layout-grid {
+#main-grid {
   display: grid;
+  grid-template-columns: 25em 1fr;
   grid-template-rows: 5em 1fr;
   height: 100%;
 }
 
 #top-bar {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
   display: flex;
-  background-color: rgb(80, 71, 56);
+  background-color: white;
+}
+
+#sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / -1;
+  background-color: gray;
+}
+
+main {
+  grid-column: 2 / -1;
+  grid-row: 2 / -1;
 }
