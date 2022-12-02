@@ -11,18 +11,27 @@
   </head>
   
   <body>
-    <h1>~WENSZOWA DOLINA~</h1>
 
-    <% if user_signed_in? %>
-      <p>Logged in as <%= current_user.email %></p>
-      <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
-    <% else %>
-      <%= link_to 'sign in', new_user_session_path %> <br>
-      <%= link_to 'sign up', new_user_registration_path %>
-    <% end %>
-    <hr>
-    <%= yield %>
-    <hr>
-    layout/application/post
+  <div id="main-grid">
+    <div id="top-bar">
+      <h1>~WENSZOWA DOLINA~</h1>
+
+      <% if user_signed_in? %>
+        <p>Logged in as <%= current_user.email %></p>
+        <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+      <% else %>
+        <%= link_to 'sign in', new_user_session_path %> <br>
+        <%= link_to 'sign up', new_user_registration_path %>
+      <% end %>
+    </div>
+
+    <div id="sidebar">
+
+    </div>
+
+    <main>
+      <%= yield %>
+    </main>
+  </div>
   </body>
 </html>
