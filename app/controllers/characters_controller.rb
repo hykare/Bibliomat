@@ -7,7 +7,7 @@ class CharactersController < ApplicationController
             @character = Character.find params[:id]
         end
 
-        @statistic = @character.statistic
+        @statistic = @character.statistic 
 
     end
 
@@ -19,11 +19,11 @@ class CharactersController < ApplicationController
         @character.exp = 0
         
         @character.name = params[:character][:name]
-        stat = Statistic.new strength: 1, dexterity: 1, stamina: 1, initiative: 1
-        
+        stat = Statistic.new default_statistic_params
+
         @character.statistic = stat
         if @character.save
-            redirect_to character_path
+            redirect_to @character
           else
             render :new, status: :unprocessable_entity
         end
@@ -33,4 +33,20 @@ class CharactersController < ApplicationController
     def new
         @character = Character.new
     end
+
+    private
+    def default_statistic_params
+        return {  
+            strength: 1,
+            dexterity: 1, 
+            stamina: 1, 
+            initiative: 1, 
+            
+            added_strength: 0, 
+            added_dexterity: 0, 
+            added_stamina: 0, 
+            added_initiative: 0
+        }
+    end
+
 end
