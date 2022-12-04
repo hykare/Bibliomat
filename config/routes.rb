@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   get '/tavern', to: 'tavern#index'
   
   resources :characters, only: [:index, :show, :new, :create]
-  
   resources :users, only: [:index, :show]
+  resources :quests, except: [:show]
 end
