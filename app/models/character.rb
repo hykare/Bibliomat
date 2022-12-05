@@ -2,13 +2,17 @@ class Character < ApplicationRecord
   belongs_to :user
   has_one :statistic
 
-  def add_exp(gained_exp)
+  def progress_level(gained_exp)
+    leveled_up = false
+
     while levels_up?(gained_exp)
       gained_exp -= exp_till_next_level
       self.exp = 0
       level_up
+      leveled_up = true
     end
     self.exp += gained_exp
+    leveled_up
   end
 
   private
