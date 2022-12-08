@@ -12,7 +12,6 @@
   </head>
   
   <body>
-
     <div id="main-grid">
       <div id="top-bar">
         <div id="title">
@@ -40,13 +39,12 @@
             </div>          
           </div>
           <div>
-            xXx_ChildPredator_xXx <br>
-            Poziom 69
-  
+            xXx_Koksu_xXx <br>
+            Poziom 6  
           </div>
         </div>
         <div id="show_activity">
-          Aktualnie ssiesz pale <br>
+          Aktualnie nic nie robisz <br>
           [|||||||||||||||\\\\\\\\\\\] <br>
           Pozostalo 21:37 do konca
         </div>
@@ -61,17 +59,16 @@
             <li><a href="#Strzelnica">Strzelnica</a></li>
           </ul>
         </div>      
-      </div>
-  
+      </div>  
       <div id="curr_view">
+        <main>
+          <%= yield %>
+        </main>
         <div id="map">
           <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-1ZrQ-wXGq-8TDA_ilustracja-do-artykulu-664x442-nocrop.jpg" alt="MW9">
         </div>      
       </div>
-    </div>
-    <main>
-      <%= yield %>
-    </main>
+    </div>    
   </div>
   </body>
 </html>
