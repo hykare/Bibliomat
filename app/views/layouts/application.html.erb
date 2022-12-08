@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <%= stylesheet_link_tag "menu"%>
   <head>
     <title>Wenszowa Dolina</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,18 +12,66 @@
   </head>
   
   <body>
-    <h1>~WENSZOWA DOLINA~</h1>
 
-    <% if user_signed_in? %>
-      <p>Logged in as <%= current_user.email %></p>
-      <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
-    <% else %>
-      <%= link_to 'sign in', new_user_session_path %> <br>
-      <%= link_to 'sign up', new_user_registration_path %>
-    <% end %>
-    <hr>
-    <%= yield %>
-    <hr>
-    layout/application/post
+    <div id="main-grid">
+      <div id="top-bar">
+        <div id="title">
+        <h1>~WENSZOWA DOLINA~</h1>
+        </div>
+        <div id="login">
+        <% if user_signed_in? %>
+          <p>Logged in as <%= current_user.email %></p>
+          <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+        <% else %>
+          <%= link_to 'sign in', new_user_session_path %> <br>
+          <%= link_to 'sign up', new_user_registration_path %>
+        <% end %>
+        </div>
+      </div>
+  
+      <div id="sidebar">
+        <div id="char_view">
+          <div class="avatar">
+            <div id="healthbar">
+              [||||||||||||||||||||||]
+            </div>
+            <div id="portrait">
+              <img src="/app/assets/images/morda.png" alt="Chad">
+            </div>          
+          </div>
+          <div>
+            xXx_ChildPredator_xXx <br>
+            Poziom 69
+  
+          </div>
+        </div>
+        <div id="show_activity">
+          Aktualnie ssiesz pale <br>
+          [|||||||||||||||\\\\\\\\\\\] <br>
+          Pozostalo 21:37 do konca
+        </div>
+        <div id="nav_menu">
+          <ul>
+            <li><a href="#Miasto">Miasto</a></li>
+            <li><a href="#Tawerna">Tawerna</a></li>
+            <li><a href="#Arena">Arena</a></li>
+            <li><a href="#Ranking">Ranking</a></li>
+            <li><a href="#Kosciol">Kosciol</a></li>
+            <li><a href="#Szkola">Szkola</a></li>
+            <li><a href="#Strzelnica">Strzelnica</a></li>
+          </ul>
+        </div>      
+      </div>
+  
+      <div id="curr_view">
+        <div id="map">
+          <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-1ZrQ-wXGq-8TDA_ilustracja-do-artykulu-664x442-nocrop.jpg" alt="MW9">
+        </div>      
+      </div>
+    </div>
+    <main>
+      <%= yield %>
+    </main>
+  </div>
   </body>
 </html>
