@@ -1,0 +1,13 @@
+
+<%= form_with model: @character do |form| %>
+  Nazwij swoją postać:
+  <div>
+    <%= form.text_field :name %>
+  </div>
+
+
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

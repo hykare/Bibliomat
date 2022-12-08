@@ -1,0 +1,14 @@
+<div class="quest_card pixel_card">
+  <div>
+    <p class="title">
+      <%= quest.title %>
+    </p>
+    <p class="description">
+      <%= quest.description %>
+    </p>
+    <div class="button_container flex_start">
+      <%= button_to 'Edit', edit_quest_path(quest.id), method: :get, class: 'pixel_button' %>
+      <%= button_to 'Delete', quest_path(quest.id), method: :delete, class: 'pixel_button' %>
+    </div>
+  </div>
+</div>

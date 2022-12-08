@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <%= stylesheet_link_tag "menu"%>
   <head>
     <title>Wenszowa Dolina</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -51,7 +50,7 @@
           Pozostalo 21:37 do konca
         </div>
         <div id="nav_menu">
-          <ul>
+          <ul id="nav_buttons">
             <li><a href="#Miasto">Miasto</a></li>
             <li><a href="#Tawerna">Tawerna</a></li>
             <li><a href="#Arena">Arena</a></li>
@@ -62,16 +61,22 @@
           </ul>
         </div>      
       </div>
-  
-      <div id="curr_view">
+      <main>
+      <%= yield %>
+      </main>
+
+      <%
+=begin%>
+ <div id="curr_view">
         <div id="map">
           <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-1ZrQ-wXGq-8TDA_ilustracja-do-artykulu-664x442-nocrop.jpg" alt="MW9">
         </div>      
-      </div>
+      </div> 
+<%
+=end%>
+
     </div>
-    <main>
-      <%= yield %>
-    </main>
+    
   </div>
   </body>
 </html>
