@@ -7,26 +7,26 @@
         <%# <div></div> %>
         <div id = "character_name"> <%= @character.name %> </div>
         <%# <div></div> %>
-        <div id = "equipment_left">
+        <div class = "equipment", id = "equipment_left">
             <br> <%= image_tag "helmet.png", class: "item" %>
             <br> <%= image_tag "armor.png", class: "item" %>   
             <br> <%= image_tag "legs", class: "item" %>
             <br> <%= image_tag "boots.png", class: "item" %>
         </div>
 
-        <div class = "avatar">
+        <div id = "avatar_image">
             <%# <%= image_tag "morda.png", class: "avatar" %>
             <%= image_tag "morda.png", class: "avatar_image" %>    
         </div>
 
-        <div id = "equipment_right">
+        <div class = "equipment", id = "equipment_right">
             <br> <%= image_tag "sword.png", class: "item" %>   
             <br> <%= image_tag "shield.png", class: "item" %>
             <br> <%= image_tag "ring1.png", class: "item" %>   
             <br> <%= image_tag "ring2.png", class: "item" %>
         </div>
 
-        <div class="hp">
+        <div id="character_healthbar">
             <div id="myBar" class="hpbar" style="width:25%">
                 <div class="hpbarcenter">25%</div>
             </div>

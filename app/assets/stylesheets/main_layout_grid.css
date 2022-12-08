@@ -3,6 +3,7 @@
   grid-template-columns: 25em 1fr;
   grid-template-rows: 5em 1fr;
   height: 100%;
+  background-color: black;
 }
 
 #top-bar {
@@ -21,4 +22,11 @@
 main {
   grid-column: 2 / -1;
   grid-row: 2 / -1;
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0.57);
+  background-image: url("megawonsz9_crop_transparent_35opacity.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
+
