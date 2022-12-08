@@ -1,54 +1,50 @@
-#main-grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 7fr;
-    justify-items: stretch;
-    align-items: stretch;
-}
 
 h1 {
     text-align: center;
 }
 
-ul {
-    position:relative;
-    left:0%;
+ul#nav_buttons {
+    position: relative;
+    left: 0%;
     list-style-type: none;
     margin: 0;
     padding: 0;
     width: 100%;
     background-color: #663d0e;
-    
-  }
-li a {
+
+}
+
+ul#nav_buttons li a {
     display: block;
     color: #000;
     padding: 8px 0px;
     width: 50%;
     text-decoration: none;
-    position:relative;
-    left:25%;
+    position: relative;
+    left: 25%;
     text-align: center;
-  }
-  
-  /* Change the link color on hover */
-  li a:hover {
+}
+
+/* Change the link color on hover */
+ul#nav_buttons li a:hover {
     background-color: #d39a59;
     color: black;
-  }
-  #char_view {
+}
+
+#character_view {
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     justify-items: stretch;
     align-items: stretch;
- }
- #show_activity {
+}
+
+#current_activity {
     background-color: grey;
     text-align: center;
     color: green;
- }
+}
 
 #sidebar {
     display: grid;
@@ -59,15 +55,28 @@ li a {
     background-color: greenyellow;
 }
 
-.avatar {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 6fr;
-        justify-items: stretch;
-        align-items: stretch;
+#nav_avatar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    justify-items: stretch;
+    align-items: stretch;
 }
-#healthbar {
+
+div#nav_characer_name {
+    word-wrap: break-word;
+}
+
+img.avatar_small {
+    width: 10em;
+}
+
+#nav_healthbar {
     color: green;
+}
+
+div.progress_bar {
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #portrait {
@@ -75,14 +84,17 @@ li a {
     align-items: stretch;
 }
 
-#top-bar{
+#top-bar {
     grid-row: 1;
     grid-column: 1/3;
     position: relative;
 }
 
 #title {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    /* margin: 2%;  */
+    /* xD ? */
+    width: 100%;
     justify-self: center;
 }
 
@@ -95,11 +107,10 @@ li a {
     height: 100%;
 }
 
-#curr_view {
+#current_view {
     grid-row: 2;
     grid-column: 2;
 
     display: block;
     margin: auto;
 }
-

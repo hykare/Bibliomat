@@ -1,0 +1,12 @@
+<div id="new_character_redirect">
+    <%= link_to "Stwórz nową postać", new_character_path %>
+</div>
+
+<ul id="characters_list">
+<% @characters.each do |char| %>
+    <li>
+        <%= link_to char.name, char %>
+    </li>
+<% end  %>
+
+</ul>

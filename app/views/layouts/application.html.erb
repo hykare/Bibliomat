@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-  <%= stylesheet_link_tag "menu"%>
   <head>
     <title>Wenszowa Dolina</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -29,29 +28,30 @@
       </div>
   
       <div id="sidebar">
-        <div id="char_view">
-          <div class="avatar">
-            <div id="healthbar">
-              [||||||||||||||||||||||]
-            </div>
+        <div id="character_view">
+          <div id="nav_avatar">
             <div id="portrait">
-              <img src="/app/assets/images/morda.png" alt="Chad">
+              <%= image_tag "morda.png", class: "avatar_small", alt: "Chad"%>   
             </div>          
           </div>
-          <div>
-            xXx_Koksu_xXx <br>
-            Poziom 6  
+          <div id="nav_characer_name">
+            _current_character <br>
+            _current_character_level
           </div>
         </div>
-        <div id="show_activity">
-          Aktualnie nic nie robisz <br>
-          [|||||||||||||||\\\\\\\\\\\] <br>
+        <div id="current_activity">
+          Aktualnie na misji<br>
+          _current_character.mission<br>
+          <div class="progress_bar">
+          [▋▋▋▋▋▋▋▋▋▋..........]
+          </div>
           Pozostalo 21:37 do konca
         </div>
         <div id="nav_menu">
-          <ul>
-            <li><a href="#Miasto">Miasto</a></li>
-            <li><a href="#Tawerna">Tawerna</a></li>
+          <ul id="nav_buttons">
+            <li><a href="/">Główna</a></li>
+            <li><a href="/characters">Drużyna</a></li>
+            <li><a href="/tavern">Tawerna</a></li>
             <li><a href="#Arena">Arena</a></li>
             <li><a href="#Ranking">Ranking</a></li>
             <li><a href="#Kosciol">Kosciol</a></li>
@@ -59,16 +59,12 @@
             <li><a href="#Strzelnica">Strzelnica</a></li>
           </ul>
         </div>      
-      </div>  
-      <div id="curr_view">
-        <main>
-          <%= yield %>
-        </main>
-        <div id="map">
-          <img src="https://cdn.galleries.smcloud.net/t/galleries/gf-1ZrQ-wXGq-8TDA_ilustracja-do-artykulu-664x442-nocrop.jpg" alt="MW9">
-        </div>      
       </div>
-    </div>    
+      <main>
+      <%= yield %>
+      </main>
+    </div>
+    
   </div>
   </body>
 </html>
