@@ -1,0 +1,47 @@
+[33mcommit 08c307a28109cbdb9845d1d4d3dbc7f33d737592[m[33m ([m[1;36mHEAD -> [m[1;32mview_main[m[33m)[m
+Author: DaWiHs <29844077+DaWiHs@users.noreply.github.com>
+Date:   Thu Nov 24 13:28:56 2022 +0100
+
+    character controller created, character page setup
+
+[33mcommit f803a722f5bdf8fdfd5866b72860eb3909382311[m
+Author: DaWiHs <29844077+DaWiHs@users.noreply.github.com>
+Date:   Thu Nov 24 13:04:52 2022 +0100
+
+    Users base seed
+
+[33mcommit 596d7e68190c6c429fa67c609314b0919409d128[m
+Author: hykare <78385964+hykare@users.noreply.github.com>
+Date:   Sun Nov 20 12:00:55 2022 +0100
+
+    fix devise signup, login; add links to main layout
+
+[33mcommit bc78128b145719a078e20957a0069f8f128f3128[m
+Author: DaWiHs <29844077+DaWiHs@users.noreply.github.com>
+Date:   Wed Nov 9 20:28:35 2022 +0100
+
+    tavern controller+view, devise view
+
+[33mcommit 0c03458d137981bb86b6f597f4b13a019a08f609[m
+Author: DaWiHs <29844077+DaWiHs@users.noreply.github.com>
+Date:   Wed Nov 9 19:48:54 2022 +0100
+
+    devise user
+
+[33mcommit 20b28d8595e000189bf4265070f5948f0c7fdc95[m
+Author: hykare <78385964+hykare@users.noreply.github.com>
+Date:   Wed Nov 9 18:47:03 2022 +0100
+
+    devise setup
+
+[33mcommit 84dc8004120efeb8979a5c3a8af1d99e1cc4bfe3[m
+Author: hykare <78385964+hykare@users.noreply.github.com>
+Date:   Wed Nov 9 17:50:28 2022 +0100
+
+    push test
+
+[33mcommit 2e62712e612c267edecca0cade651765b97436a4[m
+Author: DaWiHs <29844077+DaWiHs@users.noreply.github.com>
+Date:   Fri Nov 4 12:06:03 2022 +0100
+
+    init

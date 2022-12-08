@@ -12,26 +12,60 @@
   
   <body>
 
-  <div id="main-grid">
-    <div id="top-bar">
-      <h1>~WENSZOWA DOLINA~</h1>
-
-      <% if user_signed_in? %>
-        <p>Logged in as <%= current_user.email %></p>
-        <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
-      <% else %>
-        <%= link_to 'sign in', new_user_session_path %> <br>
-        <%= link_to 'sign up', new_user_registration_path %>
-      <% end %>
-    </div>
-
-    <div id="sidebar">
-
-    </div>
-
-    <main>
+    <div id="main-grid">
+      <div id="top-bar">
+        <div id="title">
+        <h1>~WENSZOWA DOLINA~</h1>
+        </div>
+        <div id="login">
+        <% if user_signed_in? %>
+          <p>Logged in as <%= current_user.email %></p>
+          <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+        <% else %>
+          <%= link_to 'sign in', new_user_session_path %> <br>
+          <%= link_to 'sign up', new_user_registration_path %>
+        <% end %>
+        </div>
+      </div>
+  
+      <div id="sidebar">
+        <div id="character_view">
+          <div id="nav_avatar">
+            <div id="portrait">
+              <%= image_tag "morda.png", class: "avatar_small", alt: "Chad"%>   
+            </div>          
+          </div>
+          <div id="nav_characer_name">
+            _current_character <br>
+            _current_character_level
+          </div>
+        </div>
+        <div id="current_activity">
+          Aktualnie na misji<br>
+          _current_character.mission<br>
+          <div class="progress_bar">
+          [▋▋▋▋▋▋▋▋▋▋..........]
+          </div>
+          Pozostalo 21:37 do konca
+        </div>
+        <div id="nav_menu">
+          <ul id="nav_buttons">
+            <li><a href="/">Główna</a></li>
+            <li><a href="/characters">Drużyna</a></li>
+            <li><a href="/tavern">Tawerna</a></li>
+            <li><a href="#Arena">Arena</a></li>
+            <li><a href="#Ranking">Ranking</a></li>
+            <li><a href="#Kosciol">Kosciol</a></li>
+            <li><a href="#Szkola">Szkola</a></li>
+            <li><a href="#Strzelnica">Strzelnica</a></li>
+          </ul>
+        </div>      
+      </div>
+      <main>
       <%= yield %>
-    </main>
+      </main>
+    </div>
+    
   </div>
   </body>
 </html>

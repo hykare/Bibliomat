@@ -81,7 +81,7 @@ table.stats_table tr td {
     font-size: 20px;
 }
 
-.hp {
+#character_healthbar {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: -2;
@@ -90,13 +90,13 @@ table.stats_table tr td {
     text-align: right;
 }
 
-.item {
+div.equipment img.item {
     width: 100px;
     height: 100px;
     border: 1px solid black;
 }
 
-.avatar {
+#avatar_image {
     justify-items: stretch; 
     align-items: stretch;
 }
