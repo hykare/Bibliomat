@@ -31,3 +31,6 @@ body {
   color: blueviolet;
 }
 
+audio {
+  display: none;
+}
