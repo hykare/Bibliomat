@@ -4,5 +4,33 @@
     background-size: cover;
     background-position: center;
     height: 100%;
-    
+    width: 100%;
+    position: relative;
+}
+
+.tavern_quest {
+    position: absolute;
+}
+
+.tavern_quest:hover {
+    background-color: rgb(163, 163, 102);
+}
+
+.quest_marker {
+    width: 2em;
+}
+
+#quest_gambler {
+    left: 16%;
+    bottom: 30%;
+}
+
+#quest_edd {
+    left: 47%;
+    bottom: 39%;
+}
+
+#quest_barkeep {
+    left: 88%;
+    bottom: 56%;
 }
