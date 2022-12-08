@@ -23,6 +23,7 @@ ul#nav_buttons li a {
     position: relative;
     left: 25%;
     text-align: center;
+    transition: 0.3s;
 }
 
 /* Change the link color on hover */
