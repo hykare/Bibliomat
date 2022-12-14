@@ -30,7 +30,7 @@
     text-align: center;
 }
 
-#character_name {
+div#character_name {
     grid-column-start: 1;
     grid-column-end: 4;
     background-color: green;
@@ -108,4 +108,18 @@ div.equipment img.item {
     grid-row-start: -2;
     grid-row-end: -1; 
     background-color: brown;
+}
+
+#class_radio_container {
+    display: grid;
+    grid-template-columns: 6em 6em 6em;
+    grid-template-rows: 2fr 1fr 6em;
+}
+
+#class_radio_container .class_icon {
+    width: 6em;
+    height: 6em;
+}
+#class_radio_container label {
+    text-align: center;
 }

@@ -1,12 +1,27 @@
 
 <%= form_with model: @character do |form| %>
+
   Nazwij swoją postać:
   <div>
     <%= form.text_field :name %>
   </div>
 
+  <br>
 
+  <div id="class_radio_container">
+    <%= radio_button_tag(:class, "warrior") %>
+    <%= radio_button_tag(:class, "hunter") %>
+    <%= radio_button_tag(:class, "mage") %>
+    <%= label_tag(:class, "Warrior") %>
+    <%= label_tag(:class, "Hunter") %>
+    <%= label_tag(:class, "Mage") %>
+    <%= image_tag "warrior.png", class: "class_icon" %>
+    <%= image_tag "hunter.png", class: "class_icon" %>
+    <%= image_tag "mage.png", class: "class_icon" %>
+  </div>
 
+  <br>
+  
   <div>
     <%= form.submit %>
   </div>
