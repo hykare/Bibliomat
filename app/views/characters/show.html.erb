@@ -15,8 +15,13 @@
         </div>
 
         <div id = "avatar_image">
-            <%# <%= image_tag "morda.png", class: "avatar" %>
-            <%= image_tag "morda.png", class: "avatar_image" %>    
+            <% if @character.character_class == 'warrior' %>
+                <%= image_tag "warrior_full.png", class: "avatar_image" %>    
+            <%elsif @character.character_class == 'hunter' %>
+                <%= image_tag "hunter_full.png", class: "avatar_image" %>    
+            <% else %>
+                <%= image_tag "mage_full.png", class: "avatar_image" %>    
+            <% end %>
         </div>
 
         <div class = "equipment", id = "equipment_right">

@@ -21,6 +21,7 @@ class CharactersController < ApplicationController
     @character.level = 0
 
     @character.name = params[:character][:name]
+    @character.character_class = params[:character][:class]
     stat = Statistic.new default_statistic_params
 
     @character.statistic = stat

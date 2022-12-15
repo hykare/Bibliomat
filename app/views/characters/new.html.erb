@@ -9,12 +9,12 @@
   <br>
 
   <div id="class_radio_container">
-    <%= radio_button_tag(:class, "warrior") %>
-    <%= radio_button_tag(:class, "hunter") %>
-    <%= radio_button_tag(:class, "mage") %>
-    <%= label_tag(:class, "Warrior") %>
-    <%= label_tag(:class, "Hunter") %>
-    <%= label_tag(:class, "Mage") %>
+    <%= form.radio_button :class, "warrior" %>
+    <%= form.radio_button :class, "hunter" %>
+    <%= form.radio_button :class, "mage" %>
+    <%= form.label :class_warrior, "Warrior" %>
+    <%= form.label :class_hunter, "Hunter" %>
+    <%= form.label :class_mage, "Mage" %>
     <%= image_tag "warrior.png", class: "class_icon" %>
     <%= image_tag "hunter.png", class: "class_icon" %>
     <%= image_tag "mage.png", class: "class_icon" %>
