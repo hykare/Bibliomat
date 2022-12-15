@@ -1,32 +1,35 @@
-#profile_container{
+#profile_container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-column-gap: 20px;
-    justify-items: stretch; 
+    justify-items: stretch;
     align-items: stretch;
     justify-self: center;
- }
+}
 
-#equipment_left, #equipment_right {
+#equipment_left,
+#equipment_right {
     background-color: pink;
 }
+
 #equipment_left {
     text-align: right;
 }
+
 #equipment_right {
     text-align: left;
 }
 
 
-#character_container{
+#character_container {
     display: grid;
     grid-template-columns: 120px 2fr 120px;
     grid-template-rows: 50px 1fr 50px;
-    justify-items: stretch; 
+    justify-items: stretch;
     align-items: stretch;
     justify-self: center;
-    border:1px solid black;
+    border: 1px solid black;
     text-align: center;
 }
 
@@ -39,22 +42,36 @@ div#character_name {
     font-weight: bold;
 }
 
-#character_container > div {
+#character_container>div {
     border: 1px solid black;
 }
 
-#stats_container{
-    border:1px solid black;
+#stats_container {
+    border: 1px solid black;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 100px;
-    justify-items: stretch; 
+    justify-items: stretch;
     align-items: stretch;
     justify-self: center;
+    margin: auto;
 }
 
-table.stats_table tr td {
-    height: 6vh;
+div.stats_table {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+div.stats_table>div {
+    height: 3vh;
+    text-align: center;
+}
+
+div.stats_table>div input {
+    height: 3vh;
+    width: 3vh;
+    padding: 0;
+    border: none;
+    background-color: unset;
 }
 
 .d3v1 {
@@ -68,16 +85,16 @@ table.stats_table tr td {
 }
 
 .d3v2_1 {
-    background-color: yellow;    
+    background-color: yellow;
     font-size: 20px;
 }
 
 .d3v3 {
-    background-color: orange;    
+    background-color: orange;
 }
 
 .d3v4 {
-    background-color: red;    
+    background-color: red;
     font-size: 20px;
 }
 
@@ -85,7 +102,7 @@ table.stats_table tr td {
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: -2;
-    grid-row-end: -1; 
+    grid-row-end: -1;
     background-color: green;
     text-align: right;
 }
@@ -97,16 +114,16 @@ div.equipment img.item {
 }
 
 #avatar_image {
-    justify-items: stretch; 
+    justify-items: stretch;
     align-items: stretch;
 }
 
-.bag{
-    border:1px solid black;
+.bag {
+    border: 1px solid black;
     grid-column-start: 1;
     grid-column-end: 6;
     grid-row-start: -2;
-    grid-row-end: -1; 
+    grid-row-end: -1;
     background-color: brown;
 }
 
@@ -120,6 +137,7 @@ div.equipment img.item {
     width: 6em;
     height: 6em;
 }
+
 #class_radio_container label {
     text-align: center;
 }
