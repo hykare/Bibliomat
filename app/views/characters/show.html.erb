@@ -39,96 +39,123 @@
     </div>
 
     
-    <%# <div class ="d3"> %>
-    <div id = "stats_container">
+    <%= form_with model: @statistic do |form| %>
+      <div id="stats_container">
 
-    <%# form_for(resource, as: resource_name, url: path(resource_name)) do |f| %>
-
-        <div class = "d3v1">
-            <table class = "stats_table">
-                <tr>
-                    <td> STR </td>
-                </tr>  
-                <tr>  
-                    <td> DEX </td>
-                </tr>  
-                <tr>  
-                    <td> STM </td>
-                </tr>  
-                <tr>  
-                    <td> INI </td>
-                </tr>
+          <div class="d3v1">
+            <table class="stats_table">
+              <tr>
+                <td> STR </td>
+              </tr>
+              <tr>
+                <td> DEX </td>
+              </tr>
+              <tr>
+                <td> STM </td>
+              </tr>
+              <tr>
+                <td> INI </td>
+              </tr>
             </table>
-        </div>
-        
-        <div class = "d3v2">
-            <table class = "stats_table">
-                <tr>
-                    <td> <%= @statistic.strength %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.dexterity %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.stamina %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.initiative %> </td> 
-                </tr>
-            </table>
-        </div>
+          </div>
 
-        <div class = "d3v2_1">
-            <table class = "stats_table">
-                <tr>
-                    <td> <%= @statistic.added_strength %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.added_dexterity %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.added_stamina %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= @statistic.added_initiative %> </td> 
-                </tr>
+          <div class="d3v2">
+            <table class="stats_table">
+              <tr>
+                <td>
+                  <%= @statistic.strength + @statistic.added_strength %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= @statistic.dexterity + @statistic.added_dexterity %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= @statistic.stamina + @statistic.added_stamina %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= @statistic.initiative + @statistic.added_initiative %>
+                </td>
+              </tr>
             </table>
-        </div>
+          </div>
 
-        <div class = "d3v3">
-            <table class = "stats_table">
-                <tr>
-                    <td> <%= image_tag "plusik.png", class: "ui" %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= image_tag "plusik.png", class: "ui" %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= image_tag "plusik.png", class: "ui" %> </td> 
-                </tr>
-                <tr>
-                    <td> <%= image_tag "plusik.png", class: "ui" %> </td> 
-                </tr>
+
+          <div class="d3v2_1">
+            <table class="stats_table">
+              <tr>
+                <td>
+                  <%= form.text_field :added_strength,
+                   value: @statistic.added_strength %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= form.text_field :added_dexterity,
+                   value: @statistic.added_dexterity %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= form.text_field :added_stamina,
+                   value: @statistic.added_stamina %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= form.text_field :added_initiative,
+                   value: @statistic.added_initiative %>
+                </td>
+              </tr>
             </table>
-        </div>
+          </div>
 
-        <div class = "d3v4">
+          <div class="d3v3">
+            <table class="stats_table">
+              <tr>
+                <td>
+                  <%= image_tag "plusik.png" , class: "ui" %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= image_tag "plusik.png" , class: "ui" %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= image_tag "plusik.png" , class: "ui" %>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <%= image_tag "plusik.png" , class: "ui" %>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="d3v4">
             <br>
             <table>
-            <tr>
-                <td>31</td> 
-            </tr>
-         </table>
-         <button type="button">
-            Akceptuj
-         </button>
-        </div>
-    <%# end %>
-        <div class = "bag">
-            ale eq wypasione
-        </div>
-        
-    </div>
+              <tr>
+                <td>31</td>
+              </tr>
+            </table>
+            <%= form.submit %>
+          </div>
+
+
+            <div class="bag">
+              ale eq wypasione
+            </div>
+
+      </div>
+    <% end %>
 
 </div>
 
