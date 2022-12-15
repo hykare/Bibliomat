@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_05_013628) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_15_165908) do
   create_table "characters", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_05_013628) do
     t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
-  create_table "quests", force: :cascade do |t|
+  create_table "quest_templates", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
