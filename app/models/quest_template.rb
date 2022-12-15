@@ -1,0 +1,2 @@
+class QuestTemplate < ApplicationRecord
+end

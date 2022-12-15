@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   resources :statistics, only: [:update]
 
   resources :users, only: [:index, :show]
-  resources :quests, except: [:show]
-
+  resources :quest_templates, except: [:show]
   patch 'reward', to: 'quest_rewards#reward', as: 'reward'
 end
