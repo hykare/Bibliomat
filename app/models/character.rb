@@ -15,12 +15,17 @@ class Character < ApplicationRecord
     leveled_up
   end
 
-  private
-
   # experience needed to reach next level
   def exp_till_next_level
     next_lvl_exp(level) - exp
   end
+
+  # belongs somewhere else probably
+  def next_lvl_exp(current_level)
+    50 * current_level**1.2
+  end
+
+  private
 
   def levels_up?(gained_exp)
     exp + gained_exp > next_lvl_exp(level)
@@ -28,11 +33,25 @@ class Character < ApplicationRecord
 
   def level_up
     self.level += 1
+
+    increse_stats
+
     # some other stuff
   end
 
-  # belongs somewhere else probably
-  def next_lvl_exp(current_level)
-    50 * current_level**1.2
+  def increse_stats
+    level_stats = if character_class == 'warrior'
+                    Statistic.warrior_level_stats
+                  elsif character_class == 'hunter'
+                    Statistic.hunter_level_stats
+                  else
+                    Statistic.mage_level_stats
+                  end
+    statistic.strength += level_stats[:strength]
+    statistic.dexterity += level_stats[:dexterity]
+    statistic.stamina += level_stats[:stamina]
+    statistic.initiative += level_stats[:initiative]
+
+    statistic.save
   end
 end
