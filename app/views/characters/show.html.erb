@@ -1,132 +1,101 @@
-<div id="profile_container">
-  <div id="character_container">
-
-    <div id="character_name">
-      <%= @character.name %>
-    </div>
-
-    <div class="equipment" , id="equipment_left">
-      <br>
-      <%= image_tag "helmet.png" , class: "item" %>
-      <br>
-      <%= image_tag "armor.png" , class: "item" %>
-      <br>
-      <%= image_tag "legs" , class: "item" %>
-      <br>
-      <%= image_tag "boots.png" , class: "item" %>
-    </div>
-
-    <div id="avatar_image">
-      <% if @character.character_class=='warrior' %>
-        <%= image_tag "warrior_full.png" , class: "avatar_image" %>
-      <%elsif @character.character_class=='hunter' %>
-        <%= image_tag "hunter_full.png" , class: "avatar_image" %>
-      <% else %>
-        <%= image_tag "mage_full.png" , class: "avatar_image" %>
-      <% end %>
-    </div>
-
-    <div class="equipment" , id="equipment_right">
-      <br>
-      <%= image_tag "sword.png" , class: "item" %>
-      <br>
-      <%= image_tag "shield.png" , class: "item" %>
-      <br>
-      <%= image_tag "ring1.png" , class: "item" %>
-      <br>
-      <%= image_tag "ring2.png" , class: "item" %>
-    </div>
-
-    <div id="character_healthbar">
-      <div id="myBar" class="hpbar" style="width:25%">
-        <div class="hpbarcenter">25%</div>
-      </div>
-    </div>
-  </div>
-
-
-  <%= form_with model: @statistic do |form| %>
-    <div id="stats_container">
-
-      <div class="d3v1">
-        <div class="stats_table">
-          <div> STR </div>          
-          <div> DEX </div>
-          <div> STM </div>
-          <div> INI </div>
-        </div>
-      </div>
-
-      <div class="d3v2">
-        <div class="stats_table">
-          <div>
-            <%= @statistic.strength + @statistic.added_strength %>
+<div class="character_and_stats">
+        <div class="character-view__container">
+          <div class="character-view">
+            <div class="character-view__armor">
+              <div class="character-view__armor--helmet">
+                <%= image_tag "helmet.png" %>
+              </div>
+              <div class="character-view__armor--torso">
+                <%= image_tag "armor.png" %>
+              </div>
+              <div class="character-view__armor--trousers">
+                <%= image_tag "legs.png" %>
+              </div>
+              <div class="character-view__armor--boots">
+                <%= image_tag "boots.png" %>
+              </div>
+            </div>
+            <div class="character-view__player">
+              <div class="character-view__player-container">
+                 <% if @character.character_class=='warrior' %>
+                <%= image_tag "warrior.png" , class: "avatar_image" %>
+              <%elsif @character.character_class=='hunter' %>
+                <%= image_tag "hunter.png" , class: "avatar_image" %>
+              <% else %>
+                <%= image_tag "mage.png" , class: "character-view__player-container--portrait" %>
+              <% end %>
+                <div class="character-view__player-container--nickname">Mike_Oxlong_123</div>
+              </div>
+              <div class="character-view__player--level">
+                <p class="character-view__player--level_number">Level 69</p>
+                <div class="character-view__player--level-bar">
+                </div>
+              </div>
+            </div>
+            <div class="character-view__accessories">
+              <div class="character-view__accessories--weapon">
+                <%= image_tag "sword.png" %>
+              </div>
+              <div class="character-view__accessories--shield">
+                <%= image_tag "shield.png" %>
+              </div>
+              <div class="character-view__accessories--ring1">
+                <%= image_tag "ring1.png" %>
+              </div>
+              <div class="character-view__accessories--ring2">
+                <%= image_tag "ring2.png" %>
+              </div>
+            </div>
           </div>
-          <div>
-            <%= @statistic.dexterity + @statistic.added_dexterity %>
-          </div>
-          <div>
-            <%= @statistic.stamina + @statistic.added_stamina %>
-          </div>
-          <div>
-            <%= @statistic.initiative + @statistic.added_initiative %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="d3v2_1">
-        <div class="stats_table">
-          <div>
-            <%= form.text_field :added_strength, value: @statistic.added_strength %>
-          </div>
-          <div>
-            <%= form.text_field :added_dexterity, value: @statistic.added_dexterity %>
-          </div>
-          <div>
-            <%= form.text_field :added_stamina, value: @statistic.added_stamina %>
-          </div>
-          <div>
-            <%= form.text_field :added_initiative, value: @statistic.added_initiative %>
+          <div class="stats">
+            <div class="stats__info">
+              <p class="stats__info--stats">Points: 5 </p>
+            </div>
+            <div class="stats__manage">
+              <div class="stats__manage--container">
+                <p class="stats__manage--name">Strength</p>
+                <p class="stats__manage--points">420</p>
+                <div class="stats__manage--plus">+</div>
+              </div>
+              <div class="stats__manage--container">
+                <p class="stats__manage--name">Dexterity</p>
+                <p class="stats__manage--points">116</p>
+                <div class="stats__manage--plus">+</div>
+              </div>
+              <div class="stats__manage--container">
+                <p class="stats__manage--name">Stamina</p>
+                <p class="stats__manage--points">66</p>
+                <div class="stats__manage--plus">+</div>
+              </div>
+              <div class="stats__manage--container">
+                <p class="stats__manage--name">Initiative</p>
+                <p class="stats__manage--points">54</p>
+                <div class="stats__manage--plus">+</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="d3v3">
-        <div class="stats_table">
-          <div>
-              <%= image_tag "plusik.png" , class: "ui" %>
+        <div class="equipment">
+          <div class="equipment__slot">
+            <%= image_tag "armor.png" %>
           </div>
-          <div>
-              <%= image_tag "plusik.png" , class: "ui" %>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot">
+            <%= image_tag "shield.png" %>
           </div>
-          <div>
-              <%= image_tag "plusik.png" , class: "ui" %>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot">
+            <%= image_tag "sword.png" %>
           </div>
-          <div>
-              <%= image_tag "plusik.png" , class: "ui" %>
-          </div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
+          <div class="equipment__slot"></div>
         </div>
       </div>
-
-      <div class="d3v4">
-        <div class="stats_table">
-          <div>
-            31
-          </div>
-          <div>
-            <%= form.submit %>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="bag">
-        ale eq wypasione
-      </div>
-
-    </div>
-    <% end %>
-
-</div>
-

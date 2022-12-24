@@ -1,36 +1,402 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-
-body,
-html {
-  margin: 0;
+* {
   padding: 0;
-  height: 100%;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: rgb(17, 5, 23);
-  color: blueviolet;
+  color: #c4c4c4;
+  background-color:#343A40;
+  min-height: 100vh;
 }
 
-body {
-  background-color: rgb(17, 5, 23);
-  color: blueviolet;
+.topbar {
+  background-color: #4e555a;
+  display: flex;
 }
 
-audio {
+.logo {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.logo__text {
+  font-family: 'Sedgwick Ave', cursive;
+  font-weight: 400;
+  font-size: 4rem;
+  letter-spacing: .1rem;
+  margin-bottom: -1rem;
+  background: -webkit-radial-gradient(circle, rgb(236, 198, 100) 17%, rgb(197, 223, 49) 56%, rgba(207,67,33,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.logo__img {
+  height: 6rem;
+  padding-right: 1.2rem;
+}
+
+.login {
+  font-size: 1.5rem;
+  margin-left: auto;
+  padding: 1rem;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropbtn {
+  background-color: #343A40;
+  color: #E9ECEF;
+  padding: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  min-width: 11rem;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
   display: none;
+  position: absolute;
+  background-color: #E9ECEF;
+  min-width: 11rem;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 1.2rem 1.6rem;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #CED4DA;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #495057;
+}
+
+.content {
+  display: flex;
+}
+
+/* ############################### */
+.sidebar {
+  background-color: #343A40;
+  height: 100vh;
+  width: 30rem;
+}
+
+.character {
+  background-color: #14171b;
+  display: flex;
+  flex-direction: row;
+}
+
+.character__view {
+  border-radius: .5rem;
+  width: 30%;
+  margin: 1rem;
+}
+
+.character__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.character__info--username {
+  font-size: 1.5rem;
+  margin: .5rem 0;
+}
+
+.character__info--level {
+  font-size: 1rem;
+}
+
+.activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.activity__status {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.activity__title {
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.activity__progress_bar--border {
+  border: 1px solid #1b1e20;
+  background-color: #1b1e20;
+  width: 80%;
+  height: 1.5rem;
+}
+
+.activity__progress_bar--fill {
+  background-color: green;
+  height: 100%;
+  width: 30%;
+}
+
+.activity__time_left {
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+
+.menu {
+  font-size: 2rem;
+  background-color: #495057;
+
+}
+
+.menu ul {
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+
+.menu li {
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.menu li > a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu li:not(:last-child) {
+  border-bottom: 1px solid #383838;
+}
+
+.menu li:hover {
+  background-color: #6c757d;
+  cursor: pointer;
+}
+
+/* ############################### */
+
+.main {
+  display: flex;
+  background-image: linear-gradient(to right bottom, rgba(33, 34, 33, 0.8), rgba(0, 0, 0, 0.8)), url(megawonsz9_crop_transparent.png);
+  /* background-image: url("./img/wonsz_opacity.png"); */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 100%;
+  justify-content: center;
+  height: 120vh;
+}
+
+/* ############################### */
+
+.character_and_stats {
+  display: flex;
+  background-color: #343A40aa;
+  width: 62rem;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  margin-top: 3rem;
+  height: 105vh;
+}
+
+.character-view {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.character-view__armor > * {
+  box-sizing: border-box;
+  border: .3rem solid #222222;
+  background-color: #343A40;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-view__armor img {
+  width: 90%;
+}
+
+.character-view__player-container {
+  position: relative;
+  text-align: center;
+
+}
+
+.character-view__player-container--nickname {
+  position: absolute;
+  background-color: #343A40cc;
+  color: #CED4DA;
+  padding: 1rem 2rem;
+  font-size: 3.2rem;
+  z-index: 10;
+  bottom: 1rem;
+  transform: translate(-50%, 0%);
+  left: 50%
+}
+
+.character-view__player-container--portrait {
+  border: .3rem solid #222222;
+  box-sizing: border-box;
+  height: 37.5rem;
+}
+
+.character-view__player--level {
+  box-sizing: border-box;
+  height: 5rem;
+  border: .3rem solid #222222;  
+  background-color: #343A40;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-view__player--level-bar {
+  position: absolute;
+  left: 0;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(0deg, rgba(27,88,24,1) 0%, rgb(4, 168, 23) 91%);
+}
+
+.character-view__player--level_number {
+  font-size: 2.5rem;
+  position: absolute;
+  z-index: 10;
+}
+
+.character-view__accessories img {
+  width: 90%;
+}
+
+.character-view__accessories > * {
+  box-sizing: border-box;
+  border: .3rem solid #222222;
+  background-color: #343A40;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ############################### */
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.stats__info {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.stats__manage {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.stats__manage--container {
+  display: flex;
+  box-sizing: border-box;
+  border: .3rem solid #222222;
+  background-color: #343A40;
+  flex-basis: calc(50% - 2rem);
+  align-items: center;
+  padding-left: 1rem;
+  margin: 1rem;
+  position: relative;
+  height: 5rem;
+}
+
+.stats__manage--name {
+  font-size: 3rem;
+
+}
+
+.stats__manage--points {
+  font-size: 3rem;
+  position: absolute;
+  transform: translate(-50%, 0);
+  left: 66%;
+}
+
+.stats__manage--plus {
+  display: flex;
+  background-color: #1f2225;
+  border-left: .3rem solid #222222;
+  margin-left: auto;
+  font-size: 4rem;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 4rem
+}
+
+.stats__manage--plus:hover {
+  background-color: rgb(87, 84, 80);
+  cursor: pointer;
+}
+
+/* ############################### */
+.equipment {
+  width: 100%;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.equipment__slot {
+  display: flex;
+  width: 10rem;
+  height: 10rem;
+  box-sizing: border-box;
+  border: .3rem solid #222222;
+  margin: .2rem;
 }
