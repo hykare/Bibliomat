@@ -19,6 +19,14 @@
   margin: 0;
 }
 
+a:visited {
+  color: unset;
+}
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
 html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
