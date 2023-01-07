@@ -6,50 +6,56 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
   
   <body>
-    <div id="main-grid">
-      <div id="top-bar">
-        <div id="title">
-        <h1>~WENSZOWA DOLINA~</h1>
-        </div>
-        <div id="login">
-        <% if user_signed_in? %>
-          <p>Logged in as <%= current_user.email %></p>
-          <%= button_to 'sign out', destroy_user_session_path, method: :delete %> <br>
+      <header class="topbar">
+    <div class="logo">
+      <%= image_tag "megawonsz9_crop_transparent.png" , class: "logo__img" %>
+      <p class="logo__text">Wenszowa Dolina</p>
+    </div>
+    
+    <div class="login">
+    <% if user_signed_in? %>
+      <div class="dropdown">
+          <button class="dropbtn"><%= current_user.email %></button>
+          <div class="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="#">Characters</a>
+            <%= button_to 'sign out', destroy_user_session_path, method: :delete %>
+          </div>
+      </div>
         <% else %>
           <%= link_to 'sign in', new_user_session_path %> <br>
           <%= link_to 'sign up', new_user_registration_path %>
         <% end %>
+      
+  </header>
+
+      
+  <div class="content">
+      <nav class="sidebar">
+      <div class="character">
+        <%= image_tag "morda.png" , class: "character__view" %>
+        <div class="character__info">
+          <p class="character__info--username">Mike_Oxlong_123</p>
+          <p class="character__info--level">Level 69</p>
         </div>
       </div>
-  
-      <div id="sidebar">
-        <div id="character_view">
-          <div id="nav_avatar">
-            <div id="portrait">
-              <%= image_tag "morda.png", class: "avatar_small", alt: "Chad"%>   
-            </div>          
-          </div>
-          <div id="nav_characer_name">
-            _current_character <br>
-            _current_character_level
-          </div>
+      <div class="activity">
+        <h2 class="activity__status">Na misji</h2>
+        <p class="activity__title">Zorientowanie sie w cenie biletów na mecz ligi mistrzów</p>
+        <div class="activity__progress_bar--border">
+          <div class="activity__progress_bar--fill"></div>
         </div>
-        <div id="current_activity">
-          Aktualnie na misji<br>
-          _current_character.mission<br>
-          <div class="progress_bar">
-          [▋▋▋▋▋▋▋▋▋▋..........]
-          </div>
-          Pozostalo 21:37 do konca
-        </div>
-        <div id="nav_menu">
-          <ul id="nav_buttons">
-            <li><a href="/">Główna</a></li>
+        <p class="activity__time_left">pozostało 21:37 do końca</p>
+      </div>
+      <div class="menu">
+        <ul>
+          <li><a href="/">Główna</a></li>
             <li><a href="/characters">Drużyna</a></li>
             <li><a href="/tavern">Tawerna</a></li>
             <li><a href="#Arena">Arena</a></li>
@@ -57,14 +63,13 @@
             <li><a href="#Kosciol">Kosciol</a></li>
             <li><a href="#Szkola">Szkola</a></li>
             <li><a href="#Strzelnica">Strzelnica</a></li>
-          </ul>
-        </div>      
+        </ul>
       </div>
-      <main>
+    </nav>
+      <main class="main">
       <%= yield %>
       </main>
-    </div>
-    
-  </div>
+      </div>
+      
   </body>
 </html>
