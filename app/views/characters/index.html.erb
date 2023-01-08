@@ -1,14 +1,18 @@
 <div class="characters_team ">
   <div class="characters_tab">
     <div class="characters_create_new">
-        <%= link_to "Stwórz nową postać", new_character_path, class: "character_redirect" %>
+      <%= link_to "Stwórz nową postać", new_character_path, class: "character_redirect" %>
     </div>
   </div>
-
   <div class="characters_tab">
     <div class="characters_list">
       <% @characters.each do |char| %>
+        <div class="characters_list_item">
+          <% button_class = (char.id == @selected.to_i) ? 'selected_character' : 'not_selected_character' %>
+          <%= button_to "", "/select/#{char.id}", class: button_class %>
           <%= link_to char.name, char, class: "character_list_redirect"%>
+
+        </div>
       <% end  %>
     </div>
   </div>

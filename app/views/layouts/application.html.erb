@@ -39,10 +39,16 @@
   <div class="content">
       <nav class="sidebar">
       <div class="character">
-        <%= image_tag "morda.png" , class: "character__view" %>
+        <% if @selected_character.character_class=='warrior' %>
+              <%= image_tag "warrior.png" , class: "character__view" %>
+            <%elsif @selected_character.character_class=='hunter' %>
+              <%= image_tag "hunter.png" , class: "character__view" %>
+            <% else %>
+              <%= image_tag "mage.png" , class: "character__view" %>
+            <% end %>
         <div class="character__info">
-          <p class="character__info--username">Mike_Oxlong_123</p>
-          <p class="character__info--level">Level 69</p>
+          <p class="character__info--username"><%= @selected_character.name %></p>
+          <p class="character__info--level">Level <%= @selected_character.level %></p>
         </div>
       </div>
       <div class="activity">

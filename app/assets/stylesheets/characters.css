@@ -42,6 +42,7 @@
   position: relative;
   height: fit-content;
   text-align: center;
+  flex: auto;
 }
 .character_list_redirect:hover {
   background-color: #4f555c;
@@ -53,8 +54,27 @@
   border: .3rem solid #222222;
   background-color: #343A40;
 }
-.character_list_item {
+.characters_list_item {
   display: flex;
+  flex-direction: row;
+  width: auto;
+}
+.characters_list_item > form {
+  display: flex;
+  align-items: center;
+}
+button.not_selected_character {
+  min-width: 2rem;
+  min-height: 2rem;
+  background-color: #343A40;
+  margin: 1rem;
+
+}
+button.selected_character {
+  min-width: 2rem;
+  min-height: 2rem;
+  background-color: #54df9e;
+  margin: 1rem;
 }
 
 /* ############################### */

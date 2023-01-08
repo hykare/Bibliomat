@@ -1,6 +1,10 @@
 class CharactersController < ApplicationController
   def index
     @characters = current_user.characters
+    puts "> #{session[:selected_character]}"
+    @selected = session[:selected_character]
+    puts "> #{@selected}"
+
   end
 
   def show
@@ -34,6 +38,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+  end
+
+  def select
+    session[:selected_character] = params[:id]
+    puts "> Set selected #{session[:selected_character]}"
+    redirect_to characters_path
   end
 
   private
