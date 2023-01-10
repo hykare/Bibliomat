@@ -11,6 +11,7 @@ class CharactersController < ApplicationController
                    Character.find params[:id]
                  end
 
+    @level_percent = (@character.exp / @character.exp_till_next_level * 100)
     @statistic = @character.statistic
   end
 

@@ -28,7 +28,7 @@
         </div>
         <div class="character-view__player--level">
           <p class="character-view__player--level_number">Level <%= @character.level %></p>
-          <div class="character-view__player--level-bar">
+          <div class="character-view__player--level-bar" style="width: <%= @level_percent %>%">
           </div>
         </div>
       </div>
@@ -54,22 +54,22 @@
       <div class="stats__manage">
         <div class="stats__manage--container">
           <p class="stats__manage--name">Strength</p>
-          <p class="stats__manage--points"><%= @character.statistic.strength %></p>
+          <p class="stats__manage--points"><%= @character.statistic.strength + @character.statistic.added_strength %></p>
           <div class="stats__manage--plus">+</div>
         </div>
         <div class="stats__manage--container">
           <p class="stats__manage--name">Dexterity</p>
-          <p class="stats__manage--points"><%= @character.statistic.dexterity %></p>
+          <p class="stats__manage--points"><%= @character.statistic.dexterity + @character.statistic.added_dexterity %></p>
           <div class="stats__manage--plus">+</div>
         </div>
         <div class="stats__manage--container">
           <p class="stats__manage--name">Stamina</p>
-          <p class="stats__manage--points"><%= @character.statistic.stamina %></p>
+          <p class="stats__manage--points"><%= @character.statistic.stamina + @character.statistic.added_stamina %></p>
           <div class="stats__manage--plus">+</div>
         </div>
         <div class="stats__manage--container">
           <p class="stats__manage--name">Initiative</p>
-          <p class="stats__manage--points"><%= @character.statistic.initiative %></p>
+          <p class="stats__manage--points"><%= @character.statistic.initiative + @character.statistic.added_initiative %></p>
           <div class="stats__manage--plus">+</div>
         </div>
       </div>
@@ -99,3 +99,5 @@
     <div class="equipment__slot"></div>
   </div>
 </div>
+
+
