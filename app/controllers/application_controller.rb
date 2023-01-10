@@ -3,18 +3,17 @@ class ApplicationController < ActionController::Base
 
   def set_selected_character
     @selected_character = empty_character
-    # if user logged in
 
-    @selected_character = if session[:selected_character].present?
-                            Character.find session[:selected_character]
-                          else
-                            current_user.characters.first!
-                          end
+    return unless user_signed_in?
+
+    session[:selected_character] = current_user.characters.first!.id unless session[:selected_character].present?
+
+    @selected_character = Character.find session[:selected_character]
   end
 
   private
 
   def empty_character
-    Character.new id: 0, name: 'No character', level: 0
+    Character.new id: 0, name: 'No character', level: 0, character_class: 'warrior'
   end
 end

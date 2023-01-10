@@ -1,10 +1,7 @@
 class CharactersController < ApplicationController
   def index
     @characters = current_user.characters
-    puts "> #{session[:selected_character]}"
     @selected = session[:selected_character]
-    puts "> #{@selected}"
-
   end
 
   def show
@@ -22,7 +19,7 @@ class CharactersController < ApplicationController
     @character.user = current_user
     @character.health = 100
     @character.exp = 0
-    @character.level = 0
+    @character.level = 1
 
     @character.name = params[:character][:name]
     @character.character_class = params[:character][:class]
@@ -41,8 +38,10 @@ class CharactersController < ApplicationController
   end
 
   def select
-    session[:selected_character] = params[:id]
-    puts "> Set selected #{session[:selected_character]}"
+    if current_user.characters.exists?(params[:id])
+      session[:selected_character] = params[:id]
+      puts "> Set selected #{session[:selected_character]}"
+    end
     redirect_to characters_path
   end
 
