@@ -1,2 +1,0 @@
-class QuestTemplate < ApplicationRecord
-end
