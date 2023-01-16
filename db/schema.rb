@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_16_152946) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
+  create_table "audiobooks", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "narrator"
+    t.string "publisher"
+    t.integer "publication_year"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "publisher"
+    t.integer "publication_year"
+    t.string "ISBN"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "characters", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
@@ -21,6 +43,45 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_152946) do
     t.integer "level"
     t.string "character_class"
     t.index ["user_id"], name: "index_characters_on_user_id"
+  end
+
+  create_table "films", force: :cascade do |t|
+    t.string "title"
+    t.string "director"
+    t.integer "publication_year"
+    t.text "cast"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "title"
+    t.string "studio"
+    t.integer "publication_year"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "rentable_id"
+    t.string "rentable_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+    t.datetime "order_date"
+    t.datetime "delivery_date"
+    t.datetime "pickup_date"
+    t.datetime "return_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_orders_on_item_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "quest_templates", force: :cascade do |t|
