@@ -19,6 +19,14 @@
   margin: 0;
 }
 
+a:visited {
+  color: unset;
+}
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
 html {
   font-size: 62.5%;
   font-family: 'Roboto', sans-serif;
@@ -94,14 +102,28 @@ body {
   right: 0
 }
 
-.dropdown-content a {
+.dropdown-content a, .dropdown-content button {
   color: black;
   padding: 1.2rem 1.6rem;
   text-decoration: none;
   display: block;
 }
+.dropdown-content button {
+  text-align: inherit;
+  border: inherit;
+  font-size: inherit;
+  font-family: inherit;
+}
 
-.dropdown-content a:hover {
+.dropdown-content form {
+  display: grid;
+}
+
+.dropdown-content a:hover{
+  background-color: #CED4DA;
+}
+
+.dropdown-content form:hover, .dropdown-content form:hover button {
   background-color: #CED4DA;
 }
 

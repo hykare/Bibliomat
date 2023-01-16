@@ -19,19 +19,22 @@
     </div>
     
     <div class="login">
-    <% if user_signed_in? %>
       <div class="dropdown">
+        <% if user_signed_in? %>
           <button class="dropbtn"><%= current_user.email %></button>
           <div class="dropdown-content">
-            <a href="#">Profile</a>
-            <a href="#">Characters</a>
-            <%= button_to 'sign out', destroy_user_session_path, method: :delete %>
+            <a href="#">Profil</a>
+            <a href="#">Postacie</a>
+            <%= button_to 'Wyloguj', destroy_user_session_path, method: :delete %>
           </div>
-      </div>
         <% else %>
-          <%= link_to 'sign in', new_user_session_path %> <br>
-          <%= link_to 'sign up', new_user_registration_path %>
+          <button class="dropbtn">Nie zalogowany</button>
+          <div class="dropdown-content">
+            <%= link_to 'Zaloguj', new_user_session_path %>
+            <%= link_to 'Zarejestruj', new_user_registration_path %>
+          </div>
         <% end %>
+      </div>
       
   </header>
 
@@ -39,10 +42,16 @@
   <div class="content">
       <nav class="sidebar">
       <div class="character">
-        <%= image_tag "morda.png" , class: "character__view" %>
+        <% if @selected_character.character_class=='warrior' %>
+              <%= image_tag "warrior.png" , class: "character__view" %>
+            <%elsif @selected_character.character_class=='hunter' %>
+              <%= image_tag "hunter.png" , class: "character__view" %>
+            <% else %>
+              <%= image_tag "mage.png" , class: "character__view" %>
+            <% end %>
         <div class="character__info">
-          <p class="character__info--username">Mike_Oxlong_123</p>
-          <p class="character__info--level">Level 69</p>
+          <p class="character__info--username"><%= @selected_character.name %></p>
+          <p class="character__info--level">Level <%= @selected_character.level %></p>
         </div>
       </div>
       <div class="activity">

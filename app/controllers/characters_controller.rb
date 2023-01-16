@@ -1,6 +1,7 @@
 class CharactersController < ApplicationController
   def index
     @characters = current_user.characters
+    @selected = session[:selected_character]
   end
 
   def show
@@ -10,6 +11,7 @@ class CharactersController < ApplicationController
                    Character.find params[:id]
                  end
 
+    @level_percent = (@character.exp / @character.exp_till_next_level * 100)
     @statistic = @character.statistic
   end
 
@@ -18,7 +20,7 @@ class CharactersController < ApplicationController
     @character.user = current_user
     @character.health = 100
     @character.exp = 0
-    @character.level = 0
+    @character.level = 1
 
     @character.name = params[:character][:name]
     @character.character_class = params[:character][:class]
@@ -34,6 +36,14 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+  end
+
+  def select
+    if current_user.characters.exists?(params[:id])
+      session[:selected_character] = params[:id]
+      puts "> Set selected #{session[:selected_character]}"
+    end
+    redirect_to characters_path
   end
 
   private

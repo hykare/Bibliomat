@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   get '/tavern', to: 'tavern#index'
   get '/ranking', to: 'tavern#ranking'
 
+
   resources :characters, only: [:index, :show, :new, :create]
   resources :statistics, only: [:update]
 
   resources :users, only: [:index, :show]
   resources :quest_templates, except: [:show]
   patch 'reward', to: 'quest_rewards#reward', as: 'reward'
+  post '/select/:id', to: 'characters#select'
+
 end

@@ -1,7 +1,7 @@
 class QuestRewardsController < ApplicationController
   def reward
     # change to currently chosen character
-    character = current_user.characters.first
+    character = Character.find session[:selected_character]
     # can depend on: quest level, quest/character level ratio, randomness?
     gained_exp = 100
     # returns true if character leveled up
