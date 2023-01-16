@@ -1,91 +1,103 @@
-<%= stylesheet_link_tag "character"%>
-
-<div class="d1">
-    <div class="d2">
-        <div class = "d2v1">
-            <br> <%= image_tag "helmet.png", class: "item" %>
-            <br> <%= image_tag "armor.png", class: "item" %>   
-            <br> <%= image_tag "legs", class: "item" %>
-            <br> <%= image_tag "boots.png", class: "item" %>
+<div class="character_and_stats">
+  <div class="character-view__container">
+    <div class="character-view">
+      <div class="character-view__armor">
+        <div class="character-view__armor--helmet">
+          <%= image_tag "helmet.png" %>
         </div>
-
-        <div class = "d2v2">
-            <%= image_tag "morda.png", class: "avatar" %>    
+        <div class="character-view__armor--torso">
+          <%= image_tag "armor.png" %>
         </div>
-
-        <div class = "d2v3">
-            <br> <%= image_tag "sword.png", class: "item" %>   
-            <br> <%= image_tag "shield.png", class: "item" %>
-            <br> <%= image_tag "ring1.png", class: "item" %>   
-            <br> <%= image_tag "ring2.png", class: "item" %>
+        <div class="character-view__armor--trousers">
+          <%= image_tag "legs.png" %>
         </div>
-
-        <div class="hp">
-                <div id="myBar" class="hpbar" style="width:25%">
-                  <div class="hpbarcenter">25%</div>
-                </div>
-              </div>
+        <div class="character-view__armor--boots">
+          <%= image_tag "boots.png" %>
         </div>
-
-    <div class ="d3">
-        <div class = "d3v1">
-            <br> STR
-            <br> DEX 
-            <br> STM
-            <br> INI
+      </div>
+      <div class="character-view__player">
+        <div class="character-view__player-container">
+            <% if @character.character_class=='warrior' %>
+              <%= image_tag "warrior_full.png" , class: "character-view__player-container--portrait" %>
+            <%elsif @character.character_class=='hunter' %>
+              <%= image_tag "hunter_full.png" , class: "character-view__player-container--portrait" %>
+            <% else %>
+              <%= image_tag "mage_full.png" , class: "character-view__player-container--portrait" %>
+            <% end %>
+          <div class="character-view__player-container--nickname"><%= @character.name %></div>
         </div>
-
-        <div class = "d3v2">
-            <br>
-            <table>
-            <tr>
-                <td>31</td> 
-            </tr>
-            <tr>
-                <td>32</td> 
-            </tr>
-            <tr>
-                <td>31</td> 
-            </tr>
-            <tr>
-                <td>31</td> 
-            </tr>
-         </table>
+        <div class="character-view__player--level">
+          <p class="character-view__player--level_number">Level <%= @character.level %></p>
+          <div class="character-view__player--level-bar" style="width: <%= @level_percent %>%">
+          </div>
         </div>
-
-        <div class = "d3v2_1">
-            <br>
-            <table>
-            <tr>
-                <td>31</td> 
-            </tr>
-         </table>
+      </div>
+      <div class="character-view__accessories">
+        <div class="character-view__accessories--weapon">
+          <%= image_tag "sword.png" %>
         </div>
-
-        <div class = "d3v3">
-            <br> <%= image_tag "plusik.png", class: "ui" %>   
-            <br> <%= image_tag "plusik.png", class: "ui" %>
-            <br> <%= image_tag "plusik.png", class: "ui" %>   
-            <br> <%= image_tag "plusik.png", class: "ui" %>
+        <div class="character-view__accessories--shield">
+          <%= image_tag "shield.png" %>
         </div>
-
-        <div class = "d3v4">
-            <br>
-            <table>
-            <tr>
-                <td>31</td> 
-            </tr>
-         </table>
-         <button type="button">
-            Akceptuj
-         </button>
+        <div class="character-view__accessories--ring1">
+          <%= image_tag "ring1.png" %>
         </div>
-
-        <div class = "bag">
-            ale eq wypasione
+        <div class="character-view__accessories--ring2">
+          <%= image_tag "ring2.png" %>
         </div>
-        
+      </div>
     </div>
-
+    <div class="stats">
+      <div class="stats__info">
+        <p class="stats__info--stats">Points: 5 </p>
+      </div>
+      <div class="stats__manage">
+        <div class="stats__manage--container">
+          <p class="stats__manage--name">Strength</p>
+          <p class="stats__manage--points"><%= @character.statistic.strength + @character.statistic.added_strength %></p>
+          <div class="stats__manage--plus">+</div>
+        </div>
+        <div class="stats__manage--container">
+          <p class="stats__manage--name">Dexterity</p>
+          <p class="stats__manage--points"><%= @character.statistic.dexterity + @character.statistic.added_dexterity %></p>
+          <div class="stats__manage--plus">+</div>
+        </div>
+        <div class="stats__manage--container">
+          <p class="stats__manage--name">Stamina</p>
+          <p class="stats__manage--points"><%= @character.statistic.stamina + @character.statistic.added_stamina %></p>
+          <div class="stats__manage--plus">+</div>
+        </div>
+        <div class="stats__manage--container">
+          <p class="stats__manage--name">Initiative</p>
+          <p class="stats__manage--points"><%= @character.statistic.initiative + @character.statistic.added_initiative %></p>
+          <div class="stats__manage--plus">+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="equipment">
+    <div class="equipment__slot">
+      <%= image_tag "armor.png" %>
+    </div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot">
+      <%= image_tag "shield.png" %>
+    </div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot">
+      <%= image_tag "sword.png" %>
+    </div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+    <div class="equipment__slot"></div>
+  </div>
 </div>
+
 

@@ -4,10 +4,15 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "test1#index"
   get '/tavern', to: 'tavern#index'
-  get '/character', to: 'characters#show'
-  get '/character/:id', to: 'characters#show'
-  get '/characters', to: 'characters#show'
-  resources :characters, only: [:show, :new, :create]
-  
+  get '/ranking', to: 'tavern#ranking'
+
+
+  resources :characters, only: [:index, :show, :new, :create]
+  resources :statistics, only: [:update]
+
   resources :users, only: [:index, :show]
+  resources :quest_templates, except: [:show]
+  patch 'reward', to: 'quest_rewards#reward', as: 'reward'
+  post '/select/:id', to: 'characters#select'
+
 end

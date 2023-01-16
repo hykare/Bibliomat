@@ -1,0 +1,44 @@
+
+.tavern_background {
+    background-image: url("karczma.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.tavern_quest {
+    position: absolute;
+    transition: 0.3s;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.tavern_quest:hover {
+    background-color: rgb(228, 231, 14);
+}
+
+.quest_marker {
+    width: 5em;
+}
+
+#quest_gambler {
+    left: 14%;
+    bottom: 32%;
+}
+
+#quest_edd {
+    left: 43%;
+    bottom: 42%;
+}
+
+#quest_barkeep {
+    left: 85%;
+    bottom: 58%;
+}

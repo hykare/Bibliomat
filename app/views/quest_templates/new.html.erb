@@ -1,0 +1,19 @@
+<div class="main_container">
+  <div class="quest_card pixel_card">
+    <div>
+      <%= form_with model: @quest_template do |form| %>
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+
+        <div class="button_container">
+          <%= link_to 'Cancel', quest_templates_path, class: "pixel_button"%>
+          <%= form.submit 'Save', class: 'pixel_button' %>
+        </div>
+
+      <% end %>
+    </div>
+  </div>
+</div>
