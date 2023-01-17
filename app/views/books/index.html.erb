@@ -1,8 +1,12 @@
-<%= form_with url: books_path, method: :get do |form| %>
-  <%= form.label :query, "Search for:" %>
-  <%= form.text_field :query, value: params[:query] %>
-  <%= form.submit "Search" %>
-<% end %>
-<div>
-  <%= render @books %>
+<div class="search">
+  <div class="search__form">
+    <%= form_with url: books_path, method: :get do |form| %>
+    <%= form.label :query, "Search for:" %>
+    <%= form.text_field :query, value: params[:query], placeholder: "What book are you looking for?" %>
+    <%= form.submit "Search" %>
+    <% end %>
+  </div>
+  <div class="search__books">
+    <%= render @books %>
+  </div>
 </div>
