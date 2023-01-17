@@ -7,7 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 (1..9).each do |i|
-  User.create email: 'user' + i.to_s + '@gmail', password: '123123123'
+  User.create email: 'user' + i.to_s + '@gmail', password: "123123#{i}"
 end
 
 lorem = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis magni, obcaecati facere alias unde maxime! Alias, maiores facilis eaque nesciunt, fugiat libero aut repellendus minus et modi ex voluptas eos illo rem quibusdam ducimus natus necessitatibus, adipisci architecto maxime perferendis qui. Omnis labore maxime, neque aliquam numquam recusandae ab asperiores officia non fugit voluptatibus eius eum, sint, facere dolore mollitia sequi consectetur reiciendis tempora! Laborum fuga debitis iste voluptatem modi, nisi dolore necessitatibus ea omnis expedita commodi dolores, ad porro dicta voluptates ducimus minima non delectus est eum nam dolor nulla fugit repellat! Voluptatibus aliquam sapiente tenetur natus consequuntur voluptates excepturi provident nulla ea veniam fuga quisquam consectetur velit rem non, expedita quis illo dicta hic quia beatae. Distinctio, itaque?'
