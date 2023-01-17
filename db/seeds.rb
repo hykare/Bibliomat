@@ -23,8 +23,9 @@ Update.create title: 'Magnam sequi libero', description: lorem
 book_lines = File.readlines('lib/datasets/books_5000_replaced.csv')
 book_lines[1..100].each do |line|
   columns = line.split(',')
+  next unless columns[5].include?('.jpg')
   book = Book.create ISBN: columns[0], title: columns[1], author: columns[2], publication_year: columns[3],
-                     publisher: columns[4]
+                     publisher: columns[4], image_url_S: columns[5], image_url_M: columns[6], image_url_L: columns[7]
 
   rand(1..5).times do
     book.items.create

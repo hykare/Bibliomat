@@ -17,7 +17,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
     t.string "narrator"
     t.string "publisher"
     t.integer "publication_year"
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -28,21 +27,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
     t.string "publisher"
     t.integer "publication_year"
     t.string "ISBN"
-    t.text "description"
+    t.string "image_url_S"
+    t.string "image_url_M"
+    t.string "image_url_L"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "characters", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name"
-    t.integer "health"
-    t.integer "exp"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "level"
-    t.string "character_class"
-    t.index ["user_id"], name: "index_characters_on_user_id"
   end
 
   create_table "films", force: :cascade do |t|
@@ -50,7 +39,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
     t.string "director"
     t.integer "publication_year"
     t.text "cast"
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -59,7 +47,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
     t.string "title"
     t.string "studio"
     t.integer "publication_year"
-    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,28 +69,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_16_171655) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_orders_on_item_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
-  end
-
-  create_table "quest_templates", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "statistics", force: :cascade do |t|
-    t.integer "character_id"
-    t.integer "strength"
-    t.integer "dexterity"
-    t.integer "stamina"
-    t.integer "initiative"
-    t.integer "added_strength"
-    t.integer "added_dexterity"
-    t.integer "added_stamina"
-    t.integer "added_initiative"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_statistics_on_character_id"
   end
 
   create_table "updates", force: :cascade do |t|

@@ -1,2 +1,6 @@
-<p><%= "#{book.author}:    #{book.title}" %></p>
-<br>
+<a href=<%= book_path(book) %>>
+  <div>
+  <%= image_tag(book.image_url_S) %>
+  <p><%= "#{book.author}:    #{book.title}" %></p>
+</div>
+</a>

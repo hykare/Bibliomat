@@ -1,0 +1,12 @@
+<%= link_to "<- WSTECZ", books_path %>
+
+<div>
+  <%= image_tag(@book.image_url_L) %>
+  <p><%= "#{@book.author}:    #{@book.title}" %></p>
+</div>
+
+<div>
+  <%= button_to "rezerwuj" %>
+  <%= button_to 'Zamów', destroy_user_session_path, method: :delete %>
+
+</div>
