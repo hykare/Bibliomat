@@ -10,7 +10,7 @@
   </div>
 
   <div class="show-container__buttons">
-    <%= button_to "rezerwuj" %> 
+    <% button_to "rezerwuj" %> 
     <%= button_to 'Zamów', orders_path(:book_id => @book.id), method: :post %>
   </div>
   <div class="show-container__back">
