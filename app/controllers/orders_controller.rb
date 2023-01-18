@@ -1,27 +1,18 @@
 class OrdersController < ApplicationController
-
-
   def create
-    # book -> free items -> first
+    book = Book.find params[:book_id]
 
-    # item = params[:]
-    # user = current_user
-    # @order = Order.new order_params
+    if book.available_items.any?
+      item = book.available_items.first
+      @order = Order.new user: current_user, item: item, order_date: Time.now
+
+      if @order.save
+        redirect_to books_path
+      else
+        redirect_to book
+      end
+    else
+      redirect_to book
+    end
   end
-
-  private
-
-  def order_params
-    # params.require(:order).permit(:user_id, :)
-  end
-
-  # t.belongs_to :user
-  # t.belongs_to :item
-  # t.datetime :order_date
-  # t.datetime :delivery_date
-  # t.datetime :pickup_date
-  # t.datetime :return_date
 end
-
-# book_id
-# current_user

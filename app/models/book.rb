@@ -18,17 +18,8 @@ class Book < ApplicationRecord
     end
   end
 
-  def free_item
-    # have no orders
-    # or
-    # only have returned orders
-
-    # items that have orders, items repeat
-    items = Item.joins(:orders)
-
-    # items with any orders
-    items = Item.joins(:orders).distinct
-
-    items = Item.left_outer_joins(:orders).where(orders: { item: nil })
+  def available_items
+    unavailable_items = Item.joins(:orders).where('orders.return_date is null')
+    Book.items - unavailable_items
   end
 end
