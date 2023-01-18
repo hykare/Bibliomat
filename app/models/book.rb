@@ -20,6 +20,6 @@ class Book < ApplicationRecord
 
   def available_items
     unavailable_items = Item.joins(:orders).where('orders.return_date is null')
-    Book.items - unavailable_items
+    items - unavailable_items
   end
 end
