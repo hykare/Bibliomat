@@ -1,12 +1,19 @@
-<%= link_to "<- WSTECZ", books_path %>
+<div class="show-container">
+  <div class="show-container__cover">
+  <div class="cover-description">
+      <p class="cover-title"><%= "#{@book.title}" %></p>
+      <p class="cover-author"><%= "#{@book.author}" %></p>
+    </div>
+    <div class="cover-image">
+      <%= image_tag(@book.image_url_L) %>
+    </div>
+  </div>
 
-<div>
-  <%= image_tag(@book.image_url_L) %>
-  <p><%= "#{@book.author}:    #{@book.title}" %></p>
-</div>
-
-<div>
-  <%= button_to "rezerwuj" %>
-  <%= button_to 'Zamów', destroy_user_session_path, method: :delete %>
-
+  <div class="show-container__buttons">
+    <%= button_to "rezerwuj" %> 
+    <%= button_to 'Zamów', destroy_user_session_path, method: :delete %>
+  </div>
+  <div class="show-container__back">
+    <%= link_to "<- Przeglądaj dalej", books_path %>
+  </div>
 </div>
