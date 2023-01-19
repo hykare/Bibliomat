@@ -36,6 +36,6 @@
 
 /.rubocop.yml
 
-Gemfile
-Gemfile.lock
-/config/boot.rb
+# Gemfile
+# Gemfile.lock
+# /config/boot.rb

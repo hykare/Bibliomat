@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= favicon_link_tag asset_path('book.ico') %>
     <%= javascript_importmap_tags %>
   </head>
   <body>
     <header class="topbar">
-      <div class="logo">
-        <p class="logo__text">Karkonoska Biblioteka Publiczna</p>
-      </div>
+      <a href="/">
+        <div class="logo">
+          <div class="logo__img">K</div>
+          <div class="logo__name">
+            <p>Karkonoska</p>
+            <p>Biblioteka</p>
+            <p>Publiczna</p>
+        </div>
+        </div>
+      </a>
+      
+      <%= link_to 'Wyszukaj', books_path %>
       <div class="login">
         <div class="dropdown">
           <% if user_signed_in? %>
@@ -34,17 +43,7 @@
         </div>
       </header>
       <div class="content">
-        <nav class="sidebar">
-          <div class="menu">
-            <ul>
-              <li><a href="/">Aktualności</a></li>
-              <li><%= link_to 'Wyszukaj', books_path %></li>
-              <li><a href="/tavern">Rezerwacje</a></li>
-              <li><a href="#Arena">Wypożyczone</a></li>
-              <li><a href="/ranking">Konto</a></li>
-            </ul>
-          </div>
-        </nav>
+    
         <main class="main">
           <%= yield %>
         </main>

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "updates#index"
+  root "updates#landing"
 
   resources :books, only: [:index, :show]
   resources :orders, only: [:create]
