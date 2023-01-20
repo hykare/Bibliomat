@@ -165,7 +165,6 @@ body {
   width: fit-content;
   background-color: #ffd60a44;
   color: white;
-  padding: .8rem 2rem;
   margin: 1rem 0;
   font-size: 5rem;
   border-radius: 1rem;
@@ -180,6 +179,11 @@ body {
   cursor: pointer;
   background-color: #ffd60a66;
 
+}
+
+.landing-button a {
+  display: block;
+  padding: .8rem 2rem;
 }
 
 .arr {
@@ -469,6 +473,8 @@ select:-webkit-autofill:focus {
   margin-top: 4rem;
   height: fit-content;
   width: 35rem;
+  box-shadow: .5rem .5rem 2rem .3rem #14171baa;
+  border-radius: 2rem;
 }
 
 #form-main-container em {
@@ -528,11 +534,14 @@ select:-webkit-autofill:focus {
   padding: 0.8rem;
   font-size: 2rem;
   border: none;
+  border-radius: .5rem;
+  background-color: #d8d6d6;
+  transition: background-color .3s ;
 }
 
 .actions input:hover {
   cursor: pointer;
-  background-color: #d8d6d6;
+  background-color: #fff;
   border: none;
 }
 
