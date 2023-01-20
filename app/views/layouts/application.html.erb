@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a696535472.js" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= favicon_link_tag asset_path('book.ico') %>
     <%= javascript_importmap_tags %>
@@ -23,24 +24,35 @@
         </div>
       </a>
       
-      <%= link_to 'Wyszukaj', books_path %>
       <div class="login">
+        <a href="/books">
+          <div class="topbar-search">
+            <p>wyszukaj</p>
+            <span class="search_icon">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+          </div>
+        </a>
         <div class="dropdown">
           <% if user_signed_in? %>
-            <button class="dropbtn"><%= current_user.email %></button>
+            <span class="user_icon dropbtn relative">
+              <i class="fa-regular fa-user fa-2xl absolute"></i>
+            </span>
             <div class="dropdown-content">
               <a href="#">Konto</a>
               <a href="#">Wypożyczone</a>
               <%= button_to 'Wyloguj', destroy_user_session_path, method: :delete %>
             </div>
           <% else %>
-            <button class="dropbtn">Nie zalogowany</button>
+            <span class="user_icon dropbtn relative">
+              <i class="fa-regular fa-user fa-2xl absolute"></i>
+            </span>
             <div class="dropdown-content">
               <%= link_to 'Zaloguj', new_user_session_path %>
               <%= link_to 'Zarejestruj', new_user_registration_path %>
             </div>
           <% end %>
-        </div>
+      </div>
       </header>
       <div class="content">
     
