@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "font-awesome";
+
 * {
   padding: 0;
   margin: 0;
@@ -39,9 +41,9 @@ body {
   /* min-height: 100vh; */
 
   background-image: linear-gradient(
-      to right bottom,
-      rgba(33, 34, 33, 0.3),
-      rgba(0, 0, 0, 0.6)
+      to bottom,
+      rgba(33, 34, 33, 0.7),
+      rgba(0, 0, 0, 0.3)
     ),
     url(karkonosze1.jpg);
   /* background-image: url("./img/wonsz_opacity.png"); */
@@ -51,7 +53,7 @@ body {
 }
 
 .topbar {
-  background-color: #4e555aaa;
+  /* background-color: #4e555aaa; */
   display: flex;
   height: 5.5rem;
   justify-content: space-between;
@@ -161,22 +163,36 @@ body {
 
 .landing-button {
   width: fit-content;
-  background-color: #FFD60A;
-  color: #001D3D;
+  background-color: #ffd60a44;
+  color: white;
   padding: .8rem 2rem;
   margin: 1rem 0;
   font-size: 5rem;
   border-radius: 1rem;
-
+  font-weight: 100;
+  border: 1px solid white;
+  transition: all .3s;
   animation: moveInRight 0.3s ease-out 2.8s;
   animation-fill-mode: backwards; 
 }
 
 .landing-button:hover {
   cursor: pointer;
+  background-color: #ffd60a66;
+
 }
 
-.landing-logo__img {
+.arr {
+  transition: all .3s;
+}
+
+.landing-button:hover > .arr {
+  margin-left: 2rem;
+}
+
+/* .landing-logo__img {
+  display: none;
+
   background-color: #172d47;
   font-size: 30rem;
   font-weight: 900;
@@ -188,7 +204,7 @@ body {
   animation: moveInBottom .7s ease;
   animation-fill-mode: backwards;
   height: fit-content;
-}
+} */
 
 /* ####################################### */
 
@@ -490,8 +506,7 @@ select:-webkit-autofill:focus {
   align-items: center;
 }
 
-.show-container__cover img {
-}
+
 
 .cover-description {
   padding: 2rem 5rem;
