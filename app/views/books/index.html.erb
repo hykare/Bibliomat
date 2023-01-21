@@ -3,7 +3,9 @@
     <%= form_with url: books_path, method: :get do |form| %>
     <%= form.label :query, "Search for:" %>
     <%= form.text_field :query, value: params[:query], placeholder: "What book are you looking for?" %>
-    <%= form.submit "Search" %>
+    <button class="form-submit" type="submit">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
     <% end %>
   </div>
   <div class="search__books">

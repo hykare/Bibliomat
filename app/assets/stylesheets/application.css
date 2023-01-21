@@ -170,9 +170,9 @@ body {
   font-weight: 100;
   border: 1px solid white;
   padding: .8rem 2rem;
-  /* transition: all .3s;
+  transition: all .3s;
   animation: moveInRight 0.3s ease-out 2.8s;
-  animation-fill-mode: backwards;  */
+  animation-fill-mode: backwards; 
 }
 
 .landing-button:hover {
@@ -372,12 +372,16 @@ body {
   display: flex;
   flex-direction: column;
   width: 100rem;
+  border-radius: 2rem;
+  min-height: 20rem;
 }
 
 .search__form {
   /* border: 1px solid green; */
   background-color: #1b1e20;
   padding: 2rem;
+  position: relative;
+  border-radius: 2rem 2rem 0 0 ;
 }
 
 .search__form form {
@@ -396,15 +400,35 @@ body {
   height: 3rem;
   border: none;
   padding: 0.3rem;
-  padding-left: 1rem;
+  padding-left: 2rem;
+  border-radius: 4rem;
+  outline: none;
+  color: black;
 }
 
-.search__form input[type="submit"] {
-  /* background-color: red; */
-  display: flex;
+.form-submit {
+  background-color: #ccc;
   border: none;
+  display: flex;
   align-self: stretch;
+  align-items: center;
   padding: 1rem;
+  width: 4rem;
+  border-radius: 0 4rem 4rem 0;
+  margin-left: -2.8rem;
+  transition: all .2s;
+}
+
+
+.form-submit i {
+  color: #495057;
+  font-size: 1.7rem;
+  line-height: 1.5rem;
+}
+
+.form-submit:hover {
+  background-color: #adacac;
+
 }
 
 .search__books {
@@ -452,15 +476,15 @@ body {
 
 /* ##################################### */
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+#form-main-container input:-webkit-autofill,
+#form-main-container input:-webkit-autofill:hover,
+#form-main-container input:-webkit-autofill:focus,
+#form-main-container textarea:-webkit-autofill,
+#form-main-container textarea:-webkit-autofill:hover,
+#form-main-container textarea:-webkit-autofill:focus,
+#form-main-container select:-webkit-autofill,
+#form-main-container select:-webkit-autofill:hover,
+#form-main-container select:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
   transition: background-color 5000s ease-in-out 0s;
 }
