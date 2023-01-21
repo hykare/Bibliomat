@@ -155,7 +155,6 @@ body {
   animation-fill-mode: backwards; 
 }
 
-
 .landing-invitation {
   font-size: 6rem;
   font-weight: 100;
@@ -170,9 +169,10 @@ body {
   border-radius: 1rem;
   font-weight: 100;
   border: 1px solid white;
-  transition: all .3s;
+  padding: .8rem 2rem;
+  /* transition: all .3s;
   animation: moveInRight 0.3s ease-out 2.8s;
-  animation-fill-mode: backwards; 
+  animation-fill-mode: backwards;  */
 }
 
 .landing-button:hover {
@@ -181,9 +181,9 @@ body {
 
 }
 
-.landing-button a {
+.button-link {
   display: block;
-  padding: .8rem 2rem;
+  width:fit-content;
 }
 
 .arr {
