@@ -301,7 +301,7 @@ body {
   position: absolute;
   background-color: #e9ecef;
   border-radius: 1rem;
-  min-width: 9rem;
+  min-width: 10rem;
   width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
@@ -316,15 +316,17 @@ body {
 .dropdown-content button {
   font-size: 1.2rem;
   color: black;
-  padding: 1.2rem 1.6rem;
+  padding: 1rem 1.2rem;
   text-decoration: none;
   display: block;
 }
 .dropdown-content button {
   text-align: inherit;
   border: inherit;
-  font-size: inherit;
   font-family: inherit;
+  font-weight: bold;
+  background-color: #d0d1d1;
+
 }
 
 .dropdown-content form {
@@ -335,8 +337,12 @@ body {
   background-color: #ced4da;
 }
 
-.dropdown-content form:hover,
 .dropdown-content form:hover button {
+  background-color: #bfc2c2;
+
+}
+
+.dropdown-content form:hover {
   background-color: #ced4da;
 }
 
